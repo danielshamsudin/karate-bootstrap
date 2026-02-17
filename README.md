@@ -73,6 +73,12 @@ java -version
 mvn -version
 ```
 
+Clone this repo:
+```bash
+git clone https://github.com/danielshamsudin/karate-bootstrap
+cd karate-bootstrap
+```
+
 Run all tests:
 ```bash
 mvn test
