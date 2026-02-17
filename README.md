@@ -83,3 +83,43 @@ Run all tests:
 ```bash
 mvn test
 ```
+
+## How to Add New Tests
+
+### 1. Create a Feature File
+Create a `.feature` file in a subfolder within `src/test/java/examples/`. For example, `src/test/java/examples/todos/todos.feature`.
+
+```cucumber
+Feature: Todos API
+
+  Background:
+    * url 'https://jsonplaceholder.typicode.com'
+
+  Scenario: Get all todos
+    Given path 'todos'
+    When method get
+    Then status 200
+```
+
+### 2. Create a Test Runner
+Create a Java class in the **same folder** as your feature file. It must end with `Test.java` (e.g., `TodosTest.java`).
+
+```java
+package examples.todos;
+
+import com.intuit.karate.junit5.Karate;
+
+class TodosTest {
+    
+    @Karate.Test
+    Karate testTodos() {
+        return Karate.run("todos").relativeTo(getClass());
+    }    
+}
+```
+
+### 3. Run the Test
+You can run this specific test using Maven:
+```bash
+mvn test -Dtest=TodosTest
+```
