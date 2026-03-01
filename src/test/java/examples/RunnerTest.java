@@ -1,24 +1,25 @@
-package examples.users;
-
-import com.intuit.karate.Results;
-import com.intuit.karate.Runner;
-import net.masterthought.cucumber.Configuration;
-import net.masterthought.cucumber.ReportBuilder;
-import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.Test;
+package examples;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-class UsersTest {
+import com.intuit.karate.Results;
+import com.intuit.karate.Runner;
+
+import net.masterthought.cucumber.Configuration;
+import net.masterthought.cucumber.ReportBuilder;
+
+class RunnerTest {
 
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:examples/users")
+        Results results = Runner.path("classpath:examples/")
                 .outputCucumberJson(true)
                 .parallel(5);
         generateReport(results.getReportDir());
