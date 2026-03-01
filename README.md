@@ -123,3 +123,8 @@ You can run this specific test using Maven:
 ```bash
 mvn test -Dtest=TodosTest
 ```
+
+### 4. Run specific feature file
+```bash
+mvn test -Dkarate.options="classpath:<feature_file_directory>/<feature_file_name>.feature"
+```
