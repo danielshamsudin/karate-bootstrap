@@ -81,6 +81,7 @@ cd karate-bootstrap
 
 Run all tests:
 ```bash
+mvn clean install
 mvn test
 ```
 
