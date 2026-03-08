@@ -15,5 +15,7 @@ function fn() {
     } else if (env == 'e2e') {
         // customize
     }
+    karate.configure('logPrettyRequest', true);
+    karate.configure('logPrettyResponse', true);
     return config;
 }

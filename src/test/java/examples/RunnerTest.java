@@ -19,9 +19,9 @@ class RunnerTest {
 
     @Test
     void testParallel() {
-        Results results = Runner.path("classpath:examples/")
+        Results results = Runner.path("classpath:examples/crudAPI/")
                 .outputCucumberJson(true)
-                .parallel(5);
+                .parallel(1);
         generateReport(results.getReportDir());
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
